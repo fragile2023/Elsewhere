@@ -1,4 +1,4 @@
-[gimmick:theme](simplex)
+[gimmick:theme](flatly)
 
 # Elsewhere
 
