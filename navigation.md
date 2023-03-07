@@ -1,6 +1,6 @@
 [gimmick:theme](bootstrap)
 
-# Elsewhere
+# The Next Elsewhere
 
 [From Elsewhere](elsewhere.md)
 [Notes](notes.md)
