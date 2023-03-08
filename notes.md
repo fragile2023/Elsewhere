@@ -30,7 +30,7 @@ conflict of interests, academia, industry, government ("triple helix")
 
 Science is conditioned but unconditional (Serres, M. Birth of physics, what conditions for doing science? STS, etc)
 
-### Science as religion (institution)
+### Science & religion (institution)
 
 Academia, the path of discovery, Science as Police, "pass on there is nothing to see!", 
 The role of education, pedagogy, the intellectual of the third dimension
