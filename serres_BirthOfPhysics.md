@@ -3,7 +3,7 @@
 ## p28
 
 | turba      | turbo     |
-| :-----:    | :-----:   |
+| :----:    | :----:   |
 | turbulence | vortex    |
 | disorder   | movement* |
 
@@ -18,3 +18,8 @@ der Kreisel (spinning top) und Bewegung, Stabilität und Widersprüche "if one d
 
 brachistochrone, *Thalweg* bei Leibniz;
 existence is the loop of a river that has flowed to better bed
+
+## p33
+
+Clinamen (declination): it is the smallest possible slope opening the path to existence 
+declination defines a slop–slope begins with loss of equilibrium
