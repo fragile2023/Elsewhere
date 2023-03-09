@@ -1,0 +1,667 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+imap <silent> <End> g<End>
+imap <silent> <Home> g<Home>
+imap <silent> <Down> gj
+imap <silent> <Up> gk
+nmap <silent> ,w,m <Plug>VimwikiMakeTomorrowDiaryNote
+nmap <silent> ,w,y <Plug>VimwikiMakeYesterdayDiaryNote
+nmap <silent> ,w,t <Plug>VimwikiTabMakeDiaryNote
+nmap <silent> ,w,w <Plug>VimwikiMakeDiaryNote
+nmap <silent> ,w,i <Plug>VimwikiDiaryGenerateLinks
+nmap <silent> ,wi <Plug>VimwikiDiaryIndex
+nmap <silent> ,ws <Plug>VimwikiUISelect
+nmap <silent> ,wt <Plug>VimwikiTabIndex
+nmap <silent> ,ww <Plug>VimwikiIndex
+map ,D :put =strftime('# %a %Y-%m-%d %H:%M:%S%z')
+map ,rc :s/^\/\///g:let @/ = ""
+map ,ic :s/^/\/\//g:let @/ = ""
+nmap ,md :%!/usr/local/bin/Markdown.pl --html4tags 
+nmap ,we <Plug>VimwikiSplitLink
+xmap gx <Plug>NetrwBrowseXVis
+nmap gx <Plug>NetrwBrowseX
+xnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
+tnoremap <silent> <Plug>(fzf-normal) 
+tnoremap <silent> <Plug>(fzf-insert) i
+nnoremap <silent> <Plug>(fzf-normal) <Nop>
+nnoremap <silent> <Plug>(fzf-insert) i
+vnoremap <silent> <Plug>(calendar) :Calendar
+nnoremap <silent> <Plug>(calendar) :Calendar
+map <silent> <End> g<End>
+map <silent> <Home> g<Home>
+map <silent> <Down> gj
+map <silent> <Up> gk
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set autowriteall
+set backspace=indent,eol,start
+set backupdir=~/.cache/vim/backup//
+set directory=~/.cache/vim/swap//
+set expandtab
+set fileencodings=ucs-bom,utf-8,default,latin1
+set formatoptions=tcqw
+set formatlistpat=^\\s*\\%(\\(-\\|\\*\\|+\\)\\|\\(\\C\\%(\\d\\+\\.\\)\\)\\)\\s\\+\\%(\\[\\([\ .oOX-]\\)\\]\\s\\)\\?
+set helplang=de
+set omnifunc=syntaxcomplete#Complete
+set path=.,/usr/include,,,**
+set ruler
+set runtimepath=~/.vim,~/.vim/bundle/Nvim-R,~/.vim/bundle/calendar.vim,~/.vim/bundle/vim-colors_atelier-schemes,~/.vim/bundle/vim-pandoc-markdown-preview,~/.vim/bundle/vimwiki,/usr/share/vim/vimfiles,/usr/share/vim/vim90,/usr/share/vim/vimfiles/after,~/.vim/after
+set shiftwidth=2
+set softtabstop=2
+set suffixes=.bak,~,.o,.info,.swp,.aux,.bbl,.blg,.brf,.cb,.dvi,.idx,.ilg,.ind,.inx,.jpg,.log,.out,.png,.toc
+set undodir=~/.cache/vim/undo//
+set visualbell
+set wildmenu
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/Nextcloud/Documents/Elsewhere
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +58 notes.md
+badd +31 serres_BirthOfPhysics.md
+badd +1 ~/Nextcloud/Documents/Elsewhere/matter.md
+argglobal
+%argdel
+$argadd notes.md
+edit notes.md
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 85 + 85) / 170)
+exe 'vert 2resize ' . ((&columns * 84 + 85) / 170)
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <buffer> <expr> <S-Tab> vimwiki#tbl#kbd_shift_tab()
+inoremap <buffer> <silent> <S-CR> :VimwikiReturn 2 2
+imap <buffer> <silent> <C-L><C-M> <Plug>VimwikiListToggle
+imap <buffer> <silent> <C-L><C-K> <Plug>VimwikiListPrevSymbol
+imap <buffer> <silent> <C-L><C-J> <Plug>VimwikiListNextSymbol
+imap <buffer> <silent> <C-T> <Plug>VimwikiIncreaseLvlSingleItem
+imap <buffer> <silent> <C-D> <Plug>VimwikiDecreaseLvlSingleItem
+nmap <buffer> <silent> 	 <Plug>VimwikiNextLink
+vmap <buffer> <silent>  <Plug>VimwikiNormalizeLinkVisualCR
+nmap <buffer> <silent>  <Plug>VimwikiFollowLink
+vmap <buffer> <silent> + <Plug>VimwikiNormalizeLinkVisual
+nmap <buffer> <silent> + <Plug>VimwikiNormalizeLink
+nmap <buffer> <silent> ,wr <Plug>VimwikiRenameLink
+nmap <buffer> <silent> ,wd <Plug>VimwikiDeleteLink
+nmap <buffer> ,whh <Plug>Vimwiki2HTMLBrowse
+nmap <buffer> ,wh <Plug>Vimwiki2HTML
+nmap <buffer> <silent> - <Plug>VimwikiRemoveHeaderLevel
+nmap <buffer> <silent> <D-CR> <Plug>VimwikiTabnewLink
+nmap <buffer> <silent> = <Plug>VimwikiAddHeaderLevel
+nnoremap <buffer> <silent> O :call vimwiki#lst#kbd_O()
+nmap <buffer> <silent> [= <Plug>VimwikiGoToPrevSiblingHeader
+nmap <buffer> <silent> [[ <Plug>VimwikiGoToPrevHeader
+nmap <buffer> <silent> [u <Plug>VimwikiGoToParentHeader
+nmap <buffer> <silent> ]= <Plug>VimwikiGoToNextSiblingHeader
+nmap <buffer> <silent> ]] <Plug>VimwikiGoToNextHeader
+nmap <buffer> <silent> ]u <Plug>VimwikiGoToParentHeader
+vnoremap <buffer> <silent> al :call vimwiki#lst#TO_list_item(0, 1)
+onoremap <buffer> <silent> al :call vimwiki#lst#TO_list_item(0, 0)
+vnoremap <buffer> <silent> ac :call vimwiki#base#TO_table_col(0, 1)
+onoremap <buffer> <silent> ac :call vimwiki#base#TO_table_col(0, 0)
+vnoremap <buffer> <silent> a\ :call vimwiki#base#TO_table_cell(0, 1)
+onoremap <buffer> <silent> a\ :call vimwiki#base#TO_table_cell(0, 0)
+vnoremap <buffer> <silent> aH :call vimwiki#base#TO_header(0, 1, v:count1)
+onoremap <buffer> <silent> aH :call vimwiki#base#TO_header(0, 1, v:count1)
+vnoremap <buffer> <silent> ah :call vimwiki#base#TO_header(0, 0, v:count1)
+onoremap <buffer> <silent> ah :call vimwiki#base#TO_header(0, 0, v:count1)
+nnoremap <buffer> gww :VimwikiTableAlignW
+nnoremap <buffer> gqq :VimwikiTableAlignQ
+noremap <buffer> <silent> gL1 :VimwikiChangeSymbolInListTo 1.
+noremap <buffer> <silent> gl1 :VimwikiChangeSymbolTo 1.
+noremap <buffer> <silent> gL+ :VimwikiChangeSymbolInListTo +
+noremap <buffer> <silent> gl+ :VimwikiChangeSymbolTo +
+noremap <buffer> <silent> gL* :VimwikiChangeSymbolInListTo *
+noremap <buffer> <silent> gl* :VimwikiChangeSymbolTo *
+noremap <buffer> <silent> gL- :VimwikiChangeSymbolInListTo -
+noremap <buffer> <silent> gl- :VimwikiChangeSymbolTo -
+map <buffer> <silent> gL  <Plug>VimwikiRemoveCBInList
+map <buffer> <silent> gl  <Plug>VimwikiRemoveSingleCB
+map <buffer> <silent> gLL <Plug>VimwikiIncreaseLvlWholeItem
+map <buffer> <silent> gLl <Plug>VimwikiIncreaseLvlWholeItem
+map <buffer> <silent> gLH <Plug>VimwikiDecreaseLvlWholeItem
+map <buffer> <silent> gLh <Plug>VimwikiDecreaseLvlWholeItem
+map <buffer> <silent> gll <Plug>VimwikiIncreaseLvlSingleItem
+map <buffer> <silent> glh <Plug>VimwikiDecreaseLvlSingleItem
+nmap <buffer> <silent> gLR <Plug>VimwikiRenumberAllLists
+nmap <buffer> <silent> gLr <Plug>VimwikiRenumberAllLists
+nmap <buffer> <silent> glr <Plug>VimwikiRenumberList
+vmap <buffer> <silent> glp <Plug>VimwikiDecrementListItem
+nmap <buffer> <silent> glp <Plug>VimwikiDecrementListItem
+vmap <buffer> <silent> gln <Plug>VimwikiIncrementListItem
+nmap <buffer> <silent> gln <Plug>VimwikiIncrementListItem
+vmap <buffer> <silent> glx <Plug>VimwikiToggleRejectedListItem
+nmap <buffer> <silent> glx <Plug>VimwikiToggleRejectedListItem
+vnoremap <buffer> <silent> il :call vimwiki#lst#TO_list_item(1, 1)
+onoremap <buffer> <silent> il :call vimwiki#lst#TO_list_item(1, 0)
+vnoremap <buffer> <silent> ic :call vimwiki#base#TO_table_col(1, 1)
+onoremap <buffer> <silent> ic :call vimwiki#base#TO_table_col(1, 0)
+vnoremap <buffer> <silent> i\ :call vimwiki#base#TO_table_cell(1, 1)
+onoremap <buffer> <silent> i\ :call vimwiki#base#TO_table_cell(1, 0)
+vnoremap <buffer> <silent> iH :call vimwiki#base#TO_header(1, 1, v:count1)
+onoremap <buffer> <silent> iH :call vimwiki#base#TO_header(1, 1, v:count1)
+vnoremap <buffer> <silent> ih :call vimwiki#base#TO_header(1, 0, v:count1)
+onoremap <buffer> <silent> ih :call vimwiki#base#TO_header(1, 0, v:count1)
+nnoremap <buffer> <silent> o :call vimwiki#lst#kbd_o()
+nnoremap <buffer> <silent> <Plug>VimwikiGoToPrevSiblingHeader :call vimwiki#base#goto_sibling(-1)
+nnoremap <buffer> <silent> <Plug>VimwikiGoToNextSiblingHeader :call vimwiki#base#goto_sibling(+1)
+nnoremap <buffer> <silent> <Plug>VimwikiGoToPrevHeader :call vimwiki#base#goto_prev_header()
+nnoremap <buffer> <silent> <Plug>VimwikiGoToNextHeader :call vimwiki#base#goto_next_header()
+nnoremap <buffer> <silent> <Plug>VimwikiGoToParentHeader :call vimwiki#base#goto_parent_header()
+nnoremap <buffer> <silent> <Plug>VimwikiRemoveHeaderLevel :call vimwiki#base#RemoveHeaderLevel()
+nnoremap <buffer> <silent> <Plug>VimwikiAddHeaderLevel :call vimwiki#base#AddHeaderLevel()
+nmap <buffer> <silent> <M-Right> <Plug>VimwikiTableMoveColumnRight
+nmap <buffer> <silent> <M-Left> <Plug>VimwikiTableMoveColumnLeft
+vmap <buffer> <silent> <C-@> <Plug>VimwikiToggleListItem
+vmap <buffer> <silent> <Nul> <Plug>VimwikiToggleListItem
+nmap <buffer> <silent> <C-@> <Plug>VimwikiToggleListItem
+nmap <buffer> <silent> <Nul> <Plug>VimwikiToggleListItem
+vmap <buffer> <silent> <C-Space> <Plug>VimwikiToggleListItem
+nmap <buffer> <silent> <C-Space> <Plug>VimwikiToggleListItem
+nmap <buffer> <silent> <C-Up> <Plug>VimwikiDiaryPrevDay
+nmap <buffer> <silent> <C-Down> <Plug>VimwikiDiaryNextDay
+nmap <buffer> <silent> <S-Tab> <Plug>VimwikiPrevLink
+nmap <buffer> <silent> <BS> <Plug>VimwikiGoBackLink
+nmap <buffer> <silent> <C-S-CR> <Plug>VimwikiTabnewLink
+nmap <buffer> <silent> <C-CR> <Plug>VimwikiVSplitLink
+imap <buffer> <silent>  <Plug>VimwikiDecreaseLvlSingleItem
+inoremap <buffer> <expr> 	 vimwiki#tbl#kbd_tab()
+imap <buffer> <silent>  <Plug>VimwikiListToggle
+imap <buffer> <silent>  <Plug>VimwikiListPrevSymbol
+imap <buffer> <silent> <NL> <Plug>VimwikiListNextSymbol
+inoremap <buffer> <silent>  :VimwikiReturn 1 5
+imap <buffer> <silent>  <Plug>VimwikiIncreaseLvlSingleItem
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=
+setlocal commentstring=%%%s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+set conceallevel=2
+setlocal conceallevel=2
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'vimwiki'
+setlocal filetype=vimwiki
+endif
+setlocal fillchars=
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=VimwikiFoldLevel(v:lnum)
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=expr
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=VimwikiFoldText()
+setlocal formatexpr=
+setlocal formatoptions=tqwn
+setlocal formatlistpat=^\\s*\\%(\\(-\\|\\*\\|+\\)\\|\\(\\C\\%(\\d\\+\\.\\)\\)\\)\\s\\+\\%(\\[\\([\ .oOX-]\\)\\]\\s\\)\\?
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+set linebreak
+setlocal linebreak
+setlocal nolisp
+setlocal lispoptions=
+setlocal lispwords=
+setlocal nolist
+setlocal listchars=
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=Complete_wikifiles
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+set relativenumber
+setlocal relativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal nosmoothscroll
+setlocal softtabstop=2
+setlocal spell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en_gb,de,fr
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=.md
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'vimwiki'
+setlocal syntax=vimwiki
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=./tags,./TAGS,tags,TAGS,~/Nextcloud/Documents/Elsewhere/.tags
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal thesaurusfunc=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal virtualedit=
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+1
+normal! zo
+3
+normal! zo
+7
+normal! zo
+9
+normal! zo
+17
+normal! zo
+19
+normal! zo
+24
+normal! zo
+29
+normal! zo
+33
+normal! zo
+40
+normal! zo
+48
+normal! zo
+56
+normal! zo
+let s:l = 33 - ((18 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 33
+normal! 014|
+wincmd w
+argglobal
+if bufexists(fnamemodify("serres_BirthOfPhysics.md", ":p")) | buffer serres_BirthOfPhysics.md | else | edit serres_BirthOfPhysics.md | endif
+balt ~/Nextcloud/Documents/Elsewhere/matter.md
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <buffer> <expr> <S-Tab> vimwiki#tbl#kbd_shift_tab()
+inoremap <buffer> <silent> <S-CR> :VimwikiReturn 2 2
+imap <buffer> <silent> <C-L><C-M> <Plug>VimwikiListToggle
+imap <buffer> <silent> <C-L><C-K> <Plug>VimwikiListPrevSymbol
+imap <buffer> <silent> <C-L><C-J> <Plug>VimwikiListNextSymbol
+imap <buffer> <silent> <C-T> <Plug>VimwikiIncreaseLvlSingleItem
+imap <buffer> <silent> <C-D> <Plug>VimwikiDecreaseLvlSingleItem
+nmap <buffer> <silent> 	 <Plug>VimwikiNextLink
+vmap <buffer> <silent>  <Plug>VimwikiNormalizeLinkVisualCR
+nmap <buffer> <silent>  <Plug>VimwikiFollowLink
+vmap <buffer> <silent> + <Plug>VimwikiNormalizeLinkVisual
+nmap <buffer> <silent> + <Plug>VimwikiNormalizeLink
+nmap <buffer> <silent> ,wr <Plug>VimwikiRenameLink
+nmap <buffer> <silent> ,wd <Plug>VimwikiDeleteLink
+nmap <buffer> ,whh <Plug>Vimwiki2HTMLBrowse
+nmap <buffer> ,wh <Plug>Vimwiki2HTML
+nmap <buffer> <silent> - <Plug>VimwikiRemoveHeaderLevel
+nmap <buffer> <silent> <D-CR> <Plug>VimwikiTabnewLink
+nmap <buffer> <silent> = <Plug>VimwikiAddHeaderLevel
+nnoremap <buffer> <silent> O :call vimwiki#lst#kbd_O()
+nmap <buffer> <silent> [= <Plug>VimwikiGoToPrevSiblingHeader
+nmap <buffer> <silent> [[ <Plug>VimwikiGoToPrevHeader
+nmap <buffer> <silent> [u <Plug>VimwikiGoToParentHeader
+nmap <buffer> <silent> ]= <Plug>VimwikiGoToNextSiblingHeader
+nmap <buffer> <silent> ]] <Plug>VimwikiGoToNextHeader
+nmap <buffer> <silent> ]u <Plug>VimwikiGoToParentHeader
+vnoremap <buffer> <silent> al :call vimwiki#lst#TO_list_item(0, 1)
+onoremap <buffer> <silent> al :call vimwiki#lst#TO_list_item(0, 0)
+vnoremap <buffer> <silent> ac :call vimwiki#base#TO_table_col(0, 1)
+onoremap <buffer> <silent> ac :call vimwiki#base#TO_table_col(0, 0)
+vnoremap <buffer> <silent> a\ :call vimwiki#base#TO_table_cell(0, 1)
+onoremap <buffer> <silent> a\ :call vimwiki#base#TO_table_cell(0, 0)
+vnoremap <buffer> <silent> aH :call vimwiki#base#TO_header(0, 1, v:count1)
+onoremap <buffer> <silent> aH :call vimwiki#base#TO_header(0, 1, v:count1)
+vnoremap <buffer> <silent> ah :call vimwiki#base#TO_header(0, 0, v:count1)
+onoremap <buffer> <silent> ah :call vimwiki#base#TO_header(0, 0, v:count1)
+nnoremap <buffer> gww :VimwikiTableAlignW
+nnoremap <buffer> gqq :VimwikiTableAlignQ
+noremap <buffer> <silent> gL1 :VimwikiChangeSymbolInListTo 1.
+noremap <buffer> <silent> gl1 :VimwikiChangeSymbolTo 1.
+noremap <buffer> <silent> gL+ :VimwikiChangeSymbolInListTo +
+noremap <buffer> <silent> gl+ :VimwikiChangeSymbolTo +
+noremap <buffer> <silent> gL* :VimwikiChangeSymbolInListTo *
+noremap <buffer> <silent> gl* :VimwikiChangeSymbolTo *
+noremap <buffer> <silent> gL- :VimwikiChangeSymbolInListTo -
+noremap <buffer> <silent> gl- :VimwikiChangeSymbolTo -
+map <buffer> <silent> gL  <Plug>VimwikiRemoveCBInList
+map <buffer> <silent> gl  <Plug>VimwikiRemoveSingleCB
+map <buffer> <silent> gLL <Plug>VimwikiIncreaseLvlWholeItem
+map <buffer> <silent> gLl <Plug>VimwikiIncreaseLvlWholeItem
+map <buffer> <silent> gLH <Plug>VimwikiDecreaseLvlWholeItem
+map <buffer> <silent> gLh <Plug>VimwikiDecreaseLvlWholeItem
+map <buffer> <silent> gll <Plug>VimwikiIncreaseLvlSingleItem
+map <buffer> <silent> glh <Plug>VimwikiDecreaseLvlSingleItem
+nmap <buffer> <silent> gLR <Plug>VimwikiRenumberAllLists
+nmap <buffer> <silent> gLr <Plug>VimwikiRenumberAllLists
+nmap <buffer> <silent> glr <Plug>VimwikiRenumberList
+vmap <buffer> <silent> glp <Plug>VimwikiDecrementListItem
+nmap <buffer> <silent> glp <Plug>VimwikiDecrementListItem
+vmap <buffer> <silent> gln <Plug>VimwikiIncrementListItem
+nmap <buffer> <silent> gln <Plug>VimwikiIncrementListItem
+vmap <buffer> <silent> glx <Plug>VimwikiToggleRejectedListItem
+nmap <buffer> <silent> glx <Plug>VimwikiToggleRejectedListItem
+vnoremap <buffer> <silent> il :call vimwiki#lst#TO_list_item(1, 1)
+onoremap <buffer> <silent> il :call vimwiki#lst#TO_list_item(1, 0)
+vnoremap <buffer> <silent> ic :call vimwiki#base#TO_table_col(1, 1)
+onoremap <buffer> <silent> ic :call vimwiki#base#TO_table_col(1, 0)
+vnoremap <buffer> <silent> i\ :call vimwiki#base#TO_table_cell(1, 1)
+onoremap <buffer> <silent> i\ :call vimwiki#base#TO_table_cell(1, 0)
+vnoremap <buffer> <silent> iH :call vimwiki#base#TO_header(1, 1, v:count1)
+onoremap <buffer> <silent> iH :call vimwiki#base#TO_header(1, 1, v:count1)
+vnoremap <buffer> <silent> ih :call vimwiki#base#TO_header(1, 0, v:count1)
+onoremap <buffer> <silent> ih :call vimwiki#base#TO_header(1, 0, v:count1)
+nnoremap <buffer> <silent> o :call vimwiki#lst#kbd_o()
+nnoremap <buffer> <silent> <Plug>VimwikiGoToPrevSiblingHeader :call vimwiki#base#goto_sibling(-1)
+nnoremap <buffer> <silent> <Plug>VimwikiGoToNextSiblingHeader :call vimwiki#base#goto_sibling(+1)
+nnoremap <buffer> <silent> <Plug>VimwikiGoToPrevHeader :call vimwiki#base#goto_prev_header()
+nnoremap <buffer> <silent> <Plug>VimwikiGoToNextHeader :call vimwiki#base#goto_next_header()
+nnoremap <buffer> <silent> <Plug>VimwikiGoToParentHeader :call vimwiki#base#goto_parent_header()
+nnoremap <buffer> <silent> <Plug>VimwikiRemoveHeaderLevel :call vimwiki#base#RemoveHeaderLevel()
+nnoremap <buffer> <silent> <Plug>VimwikiAddHeaderLevel :call vimwiki#base#AddHeaderLevel()
+nmap <buffer> <silent> <M-Right> <Plug>VimwikiTableMoveColumnRight
+nmap <buffer> <silent> <M-Left> <Plug>VimwikiTableMoveColumnLeft
+vmap <buffer> <silent> <C-@> <Plug>VimwikiToggleListItem
+vmap <buffer> <silent> <Nul> <Plug>VimwikiToggleListItem
+nmap <buffer> <silent> <C-@> <Plug>VimwikiToggleListItem
+nmap <buffer> <silent> <Nul> <Plug>VimwikiToggleListItem
+vmap <buffer> <silent> <C-Space> <Plug>VimwikiToggleListItem
+nmap <buffer> <silent> <C-Space> <Plug>VimwikiToggleListItem
+nmap <buffer> <silent> <C-Up> <Plug>VimwikiDiaryPrevDay
+nmap <buffer> <silent> <C-Down> <Plug>VimwikiDiaryNextDay
+nmap <buffer> <silent> <S-Tab> <Plug>VimwikiPrevLink
+nmap <buffer> <silent> <BS> <Plug>VimwikiGoBackLink
+nmap <buffer> <silent> <C-S-CR> <Plug>VimwikiTabnewLink
+nmap <buffer> <silent> <C-CR> <Plug>VimwikiVSplitLink
+imap <buffer> <silent>  <Plug>VimwikiDecreaseLvlSingleItem
+inoremap <buffer> <expr> 	 vimwiki#tbl#kbd_tab()
+imap <buffer> <silent>  <Plug>VimwikiListToggle
+imap <buffer> <silent>  <Plug>VimwikiListPrevSymbol
+imap <buffer> <silent> <NL> <Plug>VimwikiListNextSymbol
+inoremap <buffer> <silent>  :VimwikiReturn 1 5
+imap <buffer> <silent>  <Plug>VimwikiIncreaseLvlSingleItem
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=
+setlocal commentstring=%%%s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+set conceallevel=2
+setlocal conceallevel=2
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'vimwiki'
+setlocal filetype=vimwiki
+endif
+setlocal fillchars=
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=VimwikiFoldLevel(v:lnum)
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=expr
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=VimwikiFoldText()
+setlocal formatexpr=
+setlocal formatoptions=tqwn
+setlocal formatlistpat=^\\s*\\%(\\(-\\|\\*\\|+\\)\\|\\(\\C\\%(\\d\\+\\.\\)\\)\\)\\s\\+\\%(\\[\\([\ .oOX-]\\)\\]\\s\\)\\?
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+set linebreak
+setlocal linebreak
+setlocal nolisp
+setlocal lispoptions=
+setlocal lispwords=
+setlocal nolist
+setlocal listchars=
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=Complete_wikifiles
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+set relativenumber
+setlocal relativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal nosmoothscroll
+setlocal softtabstop=2
+set spell
+setlocal spell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=.md
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'vimwiki'
+setlocal syntax=vimwiki
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=./tags,./TAGS,tags,TAGS,~/Nextcloud/Documents/Elsewhere/.tags
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal thesaurusfunc=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal virtualedit=
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+1
+normal! zo
+3
+normal! zo
+13
+normal! zo
+17
+normal! zo
+22
+normal! zo
+33
+normal! zo
+47
+normal! zo
+51
+normal! zo
+55
+normal! zo
+63
+normal! zo
+69
+normal! zo
+77
+normal! zo
+88
+normal! zo
+96
+normal! zo
+107
+normal! zo
+112
+normal! zo
+let s:l = 115 - ((38 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 115
+normal! 071|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 85 + 85) / 170)
+exe 'vert 2resize ' . ((&columns * 84 + 85) / 170)
+tabnext 1
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20
+set shortmess=filnxtToOS
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
