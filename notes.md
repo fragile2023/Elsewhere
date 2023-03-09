@@ -36,14 +36,24 @@ Academia, the path of discovery, Science as Police, "pass on there is nothing to
 The role of education, pedagogy, the intellectual of the third dimension
 academy vs the garden (Kepos)
 
+(fable: the garden and the cliff, GS Brown in A Lion's Teeth)
+
 
 ## Elsewhere and research
+
+elsewhere metaphor e.g. the clinamen, the turbulence, the vortex in a laminar flow
+**nunc hinc, nunc illinc** here and there,  
+incerto tempore, incertisque locis: at an indefinte time and place)
+
+Network of (pop up) "gardens" (here & there like the clinamen, the turbulence), ataraxia, aponia) sustainability, inclusiveness, aesthetics, emancipated learner, (connotation of garden –> caring for / creating the bonds with things/objects/subjects, appearance of quasi-objects; not about the "I, Thou, We etc" but about "This, here, ecce! and the becoming quasi-objects), The art of the contract (foedor naturae)
+
+Elsewhere appears where the local generates an interesting pact/contract a turbulence;
 
 Working in the garden, Incubation(s) Description & Intervention, "Horizontality" and anarchist? strategies
 
 go to elsewhere, make a chair, sit down and think. grow roots, go to another place, leave chair behind, make a new chair...
 
-there is always something more important; against lazy thinking;
+there is always something more important (problem of loyality regarding disicplines); against lazy thinking;
 
 ## European Bauhaus
 
