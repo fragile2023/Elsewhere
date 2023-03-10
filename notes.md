@@ -15,7 +15,7 @@ Science and Society relation: fear, anxiety, obedience, ignorance
 conflict of interests, academia, industry, government ("triple helix")
 
 
-### Science & War
+[###](###) Science & War
 
 war as the mother of all things and: After the battle; Epicurus and Lucretius lay down their weapons, drive Mars out of physics
 
