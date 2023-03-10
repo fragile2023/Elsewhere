@@ -17,6 +17,19 @@ conflict of interests, academia, industry, government ("triple helix")
 
 ### Science & War
 
+war as the mother of all things and: After the battle; Epicurus and Lucretius lay down their weapons, drive Mars out of physics
+
+But:
+
+Modern science: Bacon (command Nature by obeying it), Descartes (we are masters & possessors) the contract (foedor naturae) is broken; the battle resumes: the Nature is adversary –> the law of the hunt; check & mate
+
+Method: strategy, no longer contract; a tactics and not a pact, a game to the death and not an act of coitus (the wolf and the lamb)
+
+decisions: contractual pact? or military strategy? which one as conditions of possibilities of science? Nature: enemy or slave? Adversary or partner? Partner in Contract? the decision has consequences
+
+Western Science following the weight of power;
+
+
 Science is conditioned but unconditional (Serres, M. Birth of physics, what conditions for doing science? STS, etc)
 
 ### Science & religion (institution)
@@ -30,11 +43,13 @@ academy vs the garden (Kepos)
 
 ## Elsewhere and research: we must return to the things itself
 
+![In the field](https://uboot.duckdns.org/index.php/s/3xYpc3QtNaziyLd/download)
+
 Question: does the appearance of "objects" or things" change our understanding of what is meant to be human?
 
 Before the appearance of objects or things: merely interrelated subjects, that act in stereotypical fashion: repeated cycles of violence, war, sacrifice, peace
 Appearance of objects external to relations of subjects; creating the bonds with things/objects, it is not about the "I, Thou, We etc" but about "This, here, ecce!
-appearance of quasi-objects; the becoming quasi-objects), The art of the contract (foedor naturae)
+appearance of quasi-objects; the becoming of quasi-objects), The art of the contract (foedor naturae)
 
 elsewhere metaphor e.g. the clinamen, the turbulence, the vortex in a laminar flow
 **nunc hinc, nunc illinc** now here, then there,  
@@ -45,6 +60,8 @@ Network of (pop up) "gardens" (here & there,  like the clinamen, the turbulence)
 Elsewhere appears where the local generates an interesting pact/contract a turbulence;
 
 ### Garden in Serres' Birth of Phyiscs
+
+Lessons of Epicureanism 
 
 They come down to this: reduce to a minimum the network of relations in which you are plunged. Live in the garden, a small space, with a few friends. No family, if possible, and in any event no politics. Aphrodite, pleasure, is born of the world in the waters. Mars is in the forum and in the armed crowd. Bring your relations to little and your object to the world, the intersubjective to the minimum, and the objective to the maximum. Your back turned on politics, study physics. Peace in the neuter. Such knowledge brings happiness, at least an end to our worst pains. Forget the sacred. This means: forget the violence that founds it, and forget the religious, which links men to one another. Consider the object, objects, nature. Yes he or she who said this, ecce, hoc est, this one, Memmius, is a god, god among men. He or she changed hominid nature.
 

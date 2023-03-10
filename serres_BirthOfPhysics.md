@@ -242,13 +242,13 @@ war as the mother of all things and: After the battle; Epicurus and Lucretius la
 
 But:
 
-Modern science: Bacon (command Nature by obeying it), Descartes (we are masters & possessors) the contract (foedor naturae) is broken; the battle resumes: the Nautre is adversary –> the law of the hunt; check & mate
+Modern science: Bacon (command Nature by obeying it), Descartes (we are masters & possessors) the contract (foedor naturae) is broken; the battle resumes: the Nature is adversary –> the law of the hunt; check & mate
 
 Method: strategy, no longer contract; a tactics and not a pact, a game to the death and not an act of coitus (the wolf and the lamb)
 
 decisions: contractual pact? or military strategy? which one as conditions of possibilities of science? Nature: enemy or slave? Adversary or partner? Partner in Contract? the decision has consequences
 
-Western Science following the wight of power;
+Western Science following the weight of power;
 
 ## p115
 
