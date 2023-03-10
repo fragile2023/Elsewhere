@@ -51,6 +51,9 @@ Before the appearance of objects or things: merely interrelated subjects, that a
 Appearance of objects external to relations of subjects; creating the bonds with things/objects, it is not about the "I, Thou, We etc" but about "This, here, ecce!
 appearance of quasi-objects; the becoming of quasi-objects), The art of the contract (foedor naturae)
 
+![Random Walker](https://uboot.duckdns.org/index.php/s/HYjT7cEQjbsGKQg/download)
+
+
 elsewhere metaphor e.g. the clinamen, the turbulence, the vortex in a laminar flow
 **nunc hinc, nunc illinc** now here, then there,  
 incerto tempore, incertisque locis: at an indefinte time and place)
@@ -65,7 +68,9 @@ Lessons of Epicureanism
 
 They come down to this: reduce to a minimum the network of relations in which you are plunged. Live in the garden, a small space, with a few friends. No family, if possible, and in any event no politics. Aphrodite, pleasure, is born of the world in the waters. Mars is in the forum and in the armed crowd. Bring your relations to little and your object to the world, the intersubjective to the minimum, and the objective to the maximum. Your back turned on politics, study physics. Peace in the neuter. Such knowledge brings happiness, at least an end to our worst pains. Forget the sacred. This means: forget the violence that founds it, and forget the religious, which links men to one another. Consider the object, objects, nature. Yes he or she who said this, ecce, hoc est, this one, Memmius, is a god, god among men. He or she changed hominid nature.
 
+Leben im Verborgenen
 
+keine Aufnahmebedingungen
 
 Working in the garden, Incubation(s) Description & Intervention, "Horizontality" and anarchist? strategies
 
@@ -83,6 +88,9 @@ he talks about on the "high tech" internet and social media and how "low-tech be
 
 Serres, M. Comment on dialectics when talking about spinning top: "if one day some subtle and playful dialectician disconcerts you, be quiet, don't answer, join the children, play at top."
 
+Lesions from the Inclined Plane (Clinamen)
+see Stengers, I Annex The virgin and the neutrino, stengersViergeNeutrinoScientifiques2006
+
 ## European Bauhaus
 
 Sustainability
@@ -93,4 +101,5 @@ Aesthetics
 
 ## European Bauhaus & Inclusiveness
 
-After the Battle, Topology of the Possible. What is a Body-a Person? Blading without feet and arms
+After the Battle, Topology of the Possible. What is a Body-a Person? Blading
+Rehab, Elderly, Disabled people, Education
